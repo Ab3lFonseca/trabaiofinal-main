@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Final</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo CSS -->
+  </head>
+  <body>
+    <header>
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Pesquise aqui..." />
+      </div>
+      <div class="filter-container">
+        <label for="sort-options">Ordenar por:</label>
+        <select id="sort-options" onchange="fetchPhotos()">
+          <option value="nome">Nome</option>
+          <option value="maiorPreco">Maior Preço</option>
+          <option value="menorPreco">Menor Preço</option>
+        </select>
+      </div>
+    </header>
+    <main>
+      <div class="gallery-container" id="gallery">
+        <!-- Produtos serão exibidos aqui -->
+      </div>
+    </main>
+    <footer>
+      <h2>Total de Produtos = <span id="total-photos"></span></h2>
+    </footer>
+    <div id="app"></div>
+
+    <script type="module">
+      import { fetchPhotos } from './main.js';
+      window.fetchPhotos = fetchPhotos;
+    </script>
+    <script type="module" src="/FFazerTabelinhas.js"></script>
+  </body> 
+</html>
